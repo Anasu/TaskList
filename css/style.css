@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bellota Text', cursive;
+}
+
+h1 {
+  text-align: center;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.flex label, .flex input {
+  margin-right: 1rem;
+}
+.flex label {
+  font-size: 1.25rem;
+}
+.flex input {
+  padding: 0.5rem; 
+  border-radius: 5px;
+  border: 1px solid #9c64a6;
+  font-family: 'Bellota Text', cursive;
+  font-size: 1rem;
+}
+.flex button {
+  padding: 0.5rem; 
+  border-radius: 5px;
+  border: 1px solid #9c64a6;
+  background-color: #ce93d8;
+  font-family: 'Bellota Text', cursive;
+  font-size: 1rem;
+}
