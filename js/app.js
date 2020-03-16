@@ -11,8 +11,9 @@ Vue.component('task-list', {
             <ol>
             <todo-item
                 v-for="item in todos"
-                v-bind:todo="item"
-                v-bind:key="item"
+                v-bind:todo="item.text"
+                v-bind:key="item.id"
+                @deleteMe="deleteItem(item.id)"
             ></todo-item>
             </ol>
         </div>
@@ -22,13 +23,25 @@ Vue.component('task-list', {
     data() {
         return {
             newTodoText: '',
+            newID: 0,
             todos: []
         }
     },
     methods: {
         addItem: function() {
-            this.todos.push(this.newTodoText);
-            console.log(this.todos);
+            this.todos.push({
+                id: this.newID, 
+                text: this.newTodoText
+            });
+            this.newID ++;
+        },
+        deleteItem: function(aux) {
+            for(it in this.todos){
+                if(this.todos[it].id == aux){
+                    this.todos.splice(it, 1);
+                    break;
+                }
+            }
         }
     },
     components: {
